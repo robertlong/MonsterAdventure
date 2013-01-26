@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.concurrent.*;
 package com.bettername.thepokemonone;
 
 /**
@@ -12,7 +14,26 @@ public class User {
 	public String username;
 	public int userID;
 	public boolean isMale;
-	public Item[] items;
+	public ArrayList<Item> items;
+	public ArrayList<Monster> monsters;
 	
+	/* Current User Singleton + Static Methods*/
+	private static User currentUser = null;
+	private static boolean isLoadingUser = false;
+	
+	public static User currentUser() {
+		if (currentUser == null) {
+			// exec an asynchronous task
+			
+		}
+		return currentUser;
+	}
+	
+	/* Instance Methods + Initializer*/
+	public User() {
+	
+	}
+	
+	/*  */
 	
 }
