@@ -1,7 +1,15 @@
 package com.bettername.thepokemonone;
 
 
-public class Attack {
+public enum Attack {
+	SuckerPunch("Sucker Punch", false, 10, 10, .2),
+	FireBlast("Fire Blast", false, 10, 10, .2),
+	PurpleNurple("Purple Nurple", false, 10, 10, .2),
+	Swirly("Swirly", false, 10, 10, .2),
+	Wedgie("Wedgie", false, 10, 10, .2)
+	;
+	
+	static int count;
     private int id;
     private String name;
     private boolean special;
@@ -9,9 +17,17 @@ public class Attack {
     private int strength;
     private int minDamageRange;
     private int maxDamageRange;
-    private float criticalPercent;
+    private double criticalPercent;
     private int[] specialEffect = null;
 
+    private Attack(String name, boolean special, int speed, int strength, double criticalPercent) {
+    	this.name = name;
+    	this.special = special;
+    	this.speed = speed;
+    	this.strength = strength;
+    	this.criticalPercent = criticalPercent;
+    }
+    
     public int getSpeed() {
         return speed;
     }
@@ -21,7 +37,7 @@ public class Attack {
     }
 
     public int getStrength() {
-        return strength;
+        return this.strength;
     }
 
     public void setStrength(int strength) {
@@ -44,7 +60,7 @@ public class Attack {
         this.maxDamageRange = maxDamageRange;
     }
 
-    public float getCriticalPercent() {
+    public double getCriticalPercent() {
         return criticalPercent;
     }
 

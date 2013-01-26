@@ -1,5 +1,33 @@
 package com.bettername.thepokemonone.monster;
 
-public class Bradpitbull {
+import java.util.ArrayList;
+import java.util.List;
+
+import com.bettername.thepokemonone.Attack;
+
+public class Bradpitbull extends Monster{
+
+	public Bradpitbull(String nickName) {
+		super(nickName);
+	}
+
+	@Override
+	public String getName() {
+		return MonsterNames.BradPitbull.toString();
+	}
+
+	@Override
+	public int getMaxHealth() {
+		return 14;
+	}
+
+	@Override
+	public List<Attack> getBaseAttacks() {
+		final List<Attack> attacks = new ArrayList<Attack>();
+		attacks.add(Attack.SuckerPunch);
+		attacks.add(Attack.PurpleNurple);
+		return attacks;
+	}
+	
 
 }
