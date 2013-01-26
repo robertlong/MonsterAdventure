@@ -1,9 +1,9 @@
 package com.bettername.thepokemonone;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,16 +19,15 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button boyButton = (Button)findViewById(R.id.boy_button);
-        boyButton.setOnClickListener(new OnClickListener(){
+        Button continueButton = (Button)findViewById(R.id.continue_button);
+        continueButton.setOnClickListener(new OnClickListener(){
 
             @Override
             public void onClick(View v)
             {
-                
-                
+                Intent continueIntent = new Intent(appContext, MapActivity.class);
+                appContext.startActivity(continueIntent);
             }
-            
         });
     }
     
