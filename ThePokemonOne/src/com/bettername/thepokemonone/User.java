@@ -1,6 +1,8 @@
+package com.bettername.thepokemonone;
+
 import java.util.ArrayList;
 import java.util.concurrent.*;
-package com.bettername.thepokemonone;
+import com.bettername.thepokemonone.monster.*;
 
 /**
  * Created with IntelliJ IDEA.
