@@ -16,7 +16,7 @@ public class Battle {
 	}
 	
 	private boolean isBattleComplete() {
-	
+		return false;
 	}
 	
 }
