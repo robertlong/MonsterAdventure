@@ -16,7 +16,6 @@ public class MapActivity extends Activity
         setContentView(R.layout.activity_map);
         // Show the Up button in the action bar.
         getActionBar().setDisplayHomeAsUpEnabled(true);
-        
     }
     
     @Override
