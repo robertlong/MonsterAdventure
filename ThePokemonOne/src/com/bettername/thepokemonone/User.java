@@ -8,4 +8,11 @@ package com.bettername.thepokemonone;
  * To change this template use File | Settings | File Templates.
  */
 public class User {
+	
+	public String username;
+	public boolean isMale;
+	public int opponentID;
+	public Item[] items;
+	
+	
 }
