@@ -3,6 +3,7 @@ package com.bettername.thepokemonone;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.Toast;
 
 public class MainActivity extends Activity
 {

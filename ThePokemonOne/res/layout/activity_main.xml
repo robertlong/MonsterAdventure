@@ -4,11 +4,44 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:layout_marginTop="120dp" >
+
+        <Button
+            android:id="@+id/boy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Boy" />
+
+        <Button
+            android:id="@+id/girl_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Girl" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:hint="Create a username"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="Continue" />
 
 </RelativeLayout>
