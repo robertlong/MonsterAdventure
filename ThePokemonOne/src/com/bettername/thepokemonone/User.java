@@ -10,8 +10,8 @@ package com.bettername.thepokemonone;
 public class User {
 	
 	public String username;
+	public int userID;
 	public boolean isMale;
-	public int opponentID;
 	public Item[] items;
 	
 	
