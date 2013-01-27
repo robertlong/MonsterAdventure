@@ -3,8 +3,8 @@ package com.bettername.thepokemonone.monster;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bettername.thepokemoneone.model.Monster;
 import com.bettername.thepokemonone.Attack;
+import com.bettername.thepokemonone.model.Monster;
 
 public class Pitbullfrog extends Monster {
 	

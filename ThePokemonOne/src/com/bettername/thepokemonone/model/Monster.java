@@ -1,4 +1,4 @@
-package com.bettername.thepokemoneone.model;
+package com.bettername.thepokemonone.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import com.bettername.thepokemonone.Item;
 
 public abstract class Monster {
 	
-	private String id = "began monster";
+	private String id = "510485f13a812433ed312c17";
 	private String nickname;
 	private List<Attack> addedAttacks;
 	private int currentHealth;

@@ -1,10 +1,10 @@
-package com.bettername.thepokemoneone.data;
+package com.bettername.thepokemonone.data;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bettername.thepokemoneone.model.Place;
+import com.bettername.thepokemonone.model.Place;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;

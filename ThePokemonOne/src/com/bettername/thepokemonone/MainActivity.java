@@ -14,8 +14,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.bettername.thepokemoneone.model.Player;
-import com.bettername.thepokemoneone.model.Player.Gender;
+import com.bettername.thepokemonone.model.Player;
+import com.bettername.thepokemonone.model.Player.Gender;
 
 public class MainActivity extends Activity
 {

@@ -8,8 +8,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.bettername.thepokemoneone.data.CreateUser;
-import com.bettername.thepokemoneone.model.Player;
+import com.bettername.thepokemonone.data.CreateUser;
+import com.bettername.thepokemonone.model.Player;
+import com.bettername.thepokemonone.monster.Bradpitbull;
+import com.bettername.thepokemonone.monster.Pitbullfrog;
+import com.bettername.thepokemonone.monster.Rihannacerous;
 
 public class CreaturePickActivity extends Activity {
 
@@ -29,6 +32,7 @@ public class CreaturePickActivity extends Activity {
 		creature1.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Player.getCurrentUser().setStartingMonster(new Pitbullfrog("bully"));
 				creature1.getBackground().setColorFilter(new LightingColorFilter(mul, add));
 				creature2.getBackground().clearColorFilter();
 				creature3.getBackground().clearColorFilter();
@@ -39,6 +43,7 @@ public class CreaturePickActivity extends Activity {
 		creature2.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Player.getCurrentUser().setStartingMonster(new Bradpitbull("bratty"));
 				creature2.getBackground().setColorFilter(new LightingColorFilter(mul, add));
 				creature1.getBackground().clearColorFilter();
 				creature3.getBackground().clearColorFilter();
@@ -49,6 +54,7 @@ public class CreaturePickActivity extends Activity {
 		creature3.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Player.getCurrentUser().setStartingMonster(new Rihannacerous("bitch"));
 				creature3.getBackground().setColorFilter(new LightingColorFilter(mul, add));
 				creature1.getBackground().clearColorFilter();
 				creature2.getBackground().clearColorFilter();

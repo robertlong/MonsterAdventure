@@ -1,4 +1,4 @@
-package com.bettername.thepokemoneone.model;
+package com.bettername.thepokemonone.model;
 
 public class Place {
 
