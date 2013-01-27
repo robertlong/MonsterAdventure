@@ -1,11 +1,12 @@
 package com.bettername.thepokemoneone.data;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import com.bettername.thepokemoneone.model.Place;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -42,10 +43,10 @@ public class POI
                     public void onSuccess(String response)
                     {
                     	Gson gson = new Gson();
-                    	Place[] places = gson.fromJson(response, Place[].class);
-                    	List<Place> placeList = new ArrayList<Place>();
-                    	placeList.addAll(Arrays.asList(places));
-                        callback.callBack(placeList);
+                    	Type listType = new TypeToken<List<Place>>(){}.getType();
+                    	
+                    	ArrayList<Place> places = (ArrayList<Place>) gson.fromJson(response, listType);
+                        callback.callBack(places);
                     }
                 });
     }
