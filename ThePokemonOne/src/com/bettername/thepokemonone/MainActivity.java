@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,9 +20,13 @@ import android.widget.TextView.OnEditorActionListener;
 import com.bettername.thepokemonone.model.Player;
 import com.bettername.thepokemonone.model.Player.Gender;
 
-public class MainActivity extends Activity
+public class MainActivity extends Activity implements OnClickListener
 {
     Context appContext = this;
+    EditText usernameText;
+    Button boyButton;
+    Button girlButton;
+    Button continueButton;
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,28 +34,13 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        usernameText = (EditText) findViewById(R.id.username_edittext);
+        boyButton = (Button) findViewById(R.id.boy_button);
+        girlButton = (Button) findViewById(R.id.girl_button);
+        continueButton = (Button) findViewById(R.id.continue_button);
+        
         Config.setContext(appContext);
         Player.createCurrentUser();
-        
-        final EditText usernameText = (EditText) findViewById(R.id.username_edittext);
-        final Button boyButton = (Button) findViewById(R.id.boy_button);
-        final Button girlButton = (Button) findViewById(R.id.girl_button);
-        final Button continueButton = (Button) findViewById(R.id.continue_button);
-        
-        usernameText.setOnEditorActionListener(new OnEditorActionListener()
-        {
-            public boolean onEditorAction(TextView v, int actionId,
-                    KeyEvent event)
-            {
-                if (actionId == EditorInfo.IME_ACTION_NEXT)
-                {
-                    continueButton.performClick();
-                    return true;
-                }
-                return false;
-            }
-            
-        });
         
         final int mul = 0x8A8A8A8A;
         boyButton.getBackground().setColorFilter(
@@ -84,19 +72,14 @@ public class MainActivity extends Activity
             }
         });
         
+        continueButton.setOnClickListener(this);
         
-        continueButton.setOnClickListener(new OnClickListener()
+        usernameText.setOnEditorActionListener(new OnEditorActionListener()
         {
-            
-            @Override
-            public void onClick(View v)
+            public boolean onEditorAction(TextView v, int actionId,
+                    KeyEvent event)
             {
-                
-                String username = usernameText.getText().toString();
-                Player.getCurrentUser().setUsername(username);
-                Intent continueIntent = new Intent(appContext,
-                        CreaturePickActivity.class);
-                appContext.startActivity(continueIntent);
+                return false;
             }
         });
     }
@@ -151,5 +134,15 @@ public class MainActivity extends Activity
     {
         // TODO Auto-generated method stub
         super.onStop();
+    }
+    
+    @Override
+    public void onClick(View v)
+    {
+        String username = usernameText.getText().toString();
+        Player.getCurrentUser().setUsername(username);
+        Intent continueIntent = new Intent(appContext,
+                CreaturePickActivity.class);
+        appContext.startActivity(continueIntent);
     }
 }
