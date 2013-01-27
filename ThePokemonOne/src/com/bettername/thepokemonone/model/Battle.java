@@ -18,7 +18,6 @@ public class Battle {
     public Battle(Player currentUser, Player opponent) {
         this.currentUser = currentUser;
         this.opponent = opponent;
-
     }
 
     public Battle(Player currentUser, Monster wildMonster) {
@@ -51,6 +50,19 @@ public class Battle {
 //            turnNumber++;
 //        }
 //    }
+
+    public boolean isBattleOver() {
+        if (!(currentUser.getStartingMonster().isAlive())) {
+            declareWinner(currentUser);
+            return true;
+        }
+        else if (!(opponent.getStartingMonster().isAlive())) {
+            declareWinner(opponent);
+            return true;
+        }
+        else
+            return false;
+    }
 
     private void run() {
         declareWinner(null);
