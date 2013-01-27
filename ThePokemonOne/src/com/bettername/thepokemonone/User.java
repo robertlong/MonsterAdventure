@@ -30,6 +30,15 @@ public class User {
 		}
 		return currentUser;
 	}
+
+    public boolean isAnyoneThere() {
+        for (int x = 0; x < monsters.size(); x++)
+            if (monsters.get(x).isAlive())
+                return true;
+
+        // Return False if the for loop completes
+        return false;
+    }
 	
 	/* Instance Methods + Initializer*/
 	public User() {

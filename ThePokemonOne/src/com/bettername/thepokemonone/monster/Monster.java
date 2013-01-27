@@ -27,14 +27,25 @@ public abstract class Monster {
 	public List<Attack> getAddedAttacks() {
 		return this.addedAttacks;
 	}
-	
-	public List<Attack> getAllAttacks() {
+
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
+    }
+
+    public List<Attack> getAllAttacks() {
 		List <Attack> result = new ArrayList<Attack>();
 		result.addAll(getBaseAttacks());
 		result.addAll(getAddedAttacks());
 		return result;
 		
 	}
+
+    public boolean isAlive() {
+        if (getCurrentHealth() > 0)
+            return true;
+        else
+            return false;
+    }
 
 	public String getNickname() {
 		return this.nickName;
