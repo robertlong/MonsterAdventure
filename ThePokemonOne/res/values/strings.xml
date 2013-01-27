@@ -3,5 +3,7 @@
 
     <string name="app_name">Creature Quest</string>
     <string name="menu_settings">About</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_story">StoryActivity</string>
 
 </resources>
