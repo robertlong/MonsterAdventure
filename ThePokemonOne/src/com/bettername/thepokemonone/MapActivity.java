@@ -40,16 +40,19 @@ public class MapActivity extends Activity
         {
             public void onLocationChanged(Location location)
             {
-                updateWithNewLocation(location);
+                you = new LatLng(location.getLatitude(),
+                        location.getLongitude());
+                youMarker.setPosition(you);
             }
             
             public void onProviderDisabled(String provider)
             {
-                updateWithNewLocation(null);
+                
             }
             
             public void onProviderEnabled(String provider)
             {
+                
             }
             
             public void onStatusChanged(String provider, int status,
@@ -62,21 +65,19 @@ public class MapActivity extends Activity
         locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000L,
                 500.0f, locationListener);
         Location location = locManager
-                .getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        
+                .getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
         you = new LatLng(location.getLatitude(), location.getLongitude());
         
-        GoogleMap map;
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
-                .getMap();
+        GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(
+                R.id.map)).getMap();
+        
         youMarker = map.addMarker(new MarkerOptions()
                 .position(you)
                 .title("You")
                 .snippet("You")
-                
                 .icon(BitmapDescriptorFactory
                         .fromResource(R.drawable.rinodogsmaller)));
-        youMarker.setPosition(you);
+        
         cameraPosition = new CameraPosition.Builder().target(you).zoom(17)
                 .bearing(0).tilt(90).build();
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
@@ -84,13 +85,8 @@ public class MapActivity extends Activity
     
     public void updateWithNewLocation(Location location)
     {
-        if (location != null)
-        {
-            you = new LatLng(location.getLatitude(), location.getLongitude());
-            youMarker.setPosition(you);
-            // CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(you);
-            // map.moveCamera(cameraUpdate);
-        }
+        
+        //
     }
     
     @Override
