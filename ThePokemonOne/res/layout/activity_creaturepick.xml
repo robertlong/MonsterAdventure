@@ -6,13 +6,7 @@
     android:background="@drawable/choosecreature" >
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Account" />
-
-    <Button
-        android:id="@+id/button1"
+        android:id="@+id/rhinodog_button"
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:layout_x="26dp"
@@ -20,7 +14,7 @@
         android:background="@drawable/rinodogpedestal" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/pigbat_button"
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:layout_x="190dp"
@@ -28,7 +22,7 @@
         android:background="@drawable/pigbatpedestal" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/birdhorse_button"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_x="162dp"
