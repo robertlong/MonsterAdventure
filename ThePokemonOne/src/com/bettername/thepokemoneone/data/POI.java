@@ -28,7 +28,8 @@ public class POI
         }
     }
     
-    public void getPOIs(double latitude, double longitude, double radius, final CallBackListener callback)
+    public void getPOIs(double latitude, double longitude, double radius,
+            final CallBackListener callback)
     {
         MyLocation place = new MyLocation(latitude, longitude, radius);
         Gson gson = new Gson();
@@ -42,15 +43,22 @@ public class POI
                     @Override
                     public void onSuccess(String response)
                     {
-                    	Gson gson = new Gson();
-                    	Type listType = new TypeToken<List<Place>>(){}.getType();
-                    	
-                    	ArrayList<Place> places = (ArrayList<Place>) gson.fromJson(response, listType);
+                        Gson gson = new Gson();
+                        Type listType = new TypeToken<List<Place>>()
+                        {
+                        }.getType();
+                        
+                        @SuppressWarnings("unchecked")
+                        ArrayList<Place> places = (ArrayList<Place>) gson
+                                .fromJson(response, listType);
+                        
                         callback.callBack(places);
                     }
                 });
     }
-    public interface CallBackListener{
+    
+    public interface CallBackListener
+    {
         public void callBack(List<Place> o);
     }
     

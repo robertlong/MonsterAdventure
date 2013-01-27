@@ -9,7 +9,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -73,10 +72,6 @@ public class MapActivity extends Activity implements POI.CallBackListener
                 .getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
         you = new LatLng(location.getLatitude(), location.getLongitude());
         
-        POI poi = new POI();
-        poi.getPOIs(location.getLatitude(), location.getLongitude(),
-                (double) location.getAccuracy(), this);
-        
         GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(
                 R.id.map)).getMap();
         
@@ -91,6 +86,9 @@ public class MapActivity extends Activity implements POI.CallBackListener
         cameraPosition = new CameraPosition.Builder().target(you).zoom(17)
                 .bearing(0).tilt(90).build();
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        POI poi = new POI();
+        poi.getPOIs(location.getLatitude(), location.getLongitude(),
+                (double) location.getAccuracy(), this);
     }
     
     @Override
@@ -137,13 +135,18 @@ public class MapActivity extends Activity implements POI.CallBackListener
     @Override
     public void callBack(List<Place> places)
     {
-        Log.w("POI", places.toString());
-        for(Place place : places){
+        GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(
+                R.id.map)).getMap();
+        for (Place place : places)
+        {
             map.addMarker(new MarkerOptions()
-            .position(new LatLng(place.coordinates[0], place.coordinates[1]))
-            .title(place.name)
-            .icon(BitmapDescriptorFactory
-                    .fromResource(R.drawable.rinodogsmaller)));
+                    .position(
+                            new LatLng(place.coordinates[0],
+                                    place.coordinates[1]))
+                    .title(place.name)
+                    .icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            
         }
     }
     
