@@ -6,6 +6,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import com.bettername.thepokemonone.util.SystemUiHider;
 
@@ -21,9 +24,18 @@ public class BattleActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        
         setContentView(R.layout.activity_battle);
         
+        ImageView pigBat = (ImageView) findViewById(R.id.pigbat_battle);
+        ImageView rhinoDog = (ImageView) findViewById(R.id.rhinodog_battle);
+        
+        Animation slideInLeft = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+        Animation slideInRight = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+        slideInRight.setInterpolator(this,android.R.interpolator.accelerate_decelerate);
+        slideInLeft.setInterpolator(this,android.R.interpolator.accelerate_decelerate);
+
+        pigBat.startAnimation(slideInLeft);
+        rhinoDog.startAnimation(slideInRight);
     }
     
     @Override
