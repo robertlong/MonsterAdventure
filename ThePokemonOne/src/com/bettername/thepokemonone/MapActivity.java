@@ -1,5 +1,13 @@
 package com.bettername.thepokemonone;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.MapFragment;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -12,10 +20,27 @@ public class MapActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        final LatLng you = new LatLng(35.299873, -120.665052);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         // Show the Up button in the action bar.
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        GoogleMap mMap;
+        mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
+                .getMap();
+        mMap.addMarker(new MarkerOptions()
+                .position(you)
+                .title("You")
+                .snippet("You")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.rinodogsmaller)));
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(you) // Sets the center of the map to Mountain View
+                .zoom(17) // Sets the zoom
+                .bearing(0) // Sets the orientation of the camera to east
+                .tilt(30) // Sets the tilt of the camera to 30 degrees
+                .build(); // Creates a CameraPosition from the builder
+        mMap.animateCamera(CameraUpdateFactory
+                .newCameraPosition(cameraPosition));
     }
     
     @Override

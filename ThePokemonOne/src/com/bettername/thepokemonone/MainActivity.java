@@ -59,7 +59,8 @@ public class MainActivity extends Activity
                             @Override
                             public void onClick(DialogInterface dialog,
                                     int which) {
-                                dialog.cancel();
+                                Intent continueIntent = new Intent(appContext, MapActivity.class);
+                                appContext.startActivity(continueIntent);
                             }
                         });
         builder.create().show();
