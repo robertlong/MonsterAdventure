@@ -4,7 +4,6 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
@@ -100,17 +99,8 @@ public class MapActivity extends Activity implements POI.CallBackListener,
         new TimerThing().execute(10000);
         
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
-        if (prev != null) {
-            ft.remove(prev);
-        }
-        ft.addToBackStack(null);
-        ft.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-
-        // Create and show the dialog.
         DialogFragment newFragment = EnvelopeFragment.newInstance();
-        
-        newFragment.show(ft, "envelope");
+        newFragment.show(ft, "dialog");
     }
     
     @Override
