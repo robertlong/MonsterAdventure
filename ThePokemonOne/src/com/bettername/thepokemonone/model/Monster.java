@@ -3,8 +3,6 @@ package com.bettername.thepokemonone.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bettername.thepokemonone.Attack;
-import com.bettername.thepokemonone.Item;
 
 public abstract class Monster {
 	
@@ -27,7 +25,9 @@ public abstract class Monster {
 		}
 	}
 	
-	
+	public Attack getAttack(int index)  {
+        return getAllAttacks().get(index);
+    }
 	
 	public Monster(String nickName) {
 		this.nickname = nickName;

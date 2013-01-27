@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone;
+package com.bettername.thepokemonone.model;
 
 /*
 
@@ -8,8 +8,6 @@ This class will access the current user singleton
 
 import java.util.Random;
 
-import com.bettername.thepokemonone.model.Monster;
-import com.bettername.thepokemonone.model.Player;
 
 public class Battle {
 
@@ -32,6 +30,15 @@ public class Battle {
         Random rand = new Random();
         int attackDamage = rand.nextInt(attack.getMaxDamageRange())+attack.getMinDamageRange();
         reciever.setCurrentHealth(reciever.getCurrentHealth()-attackDamage);
+    }
+
+    private void aiAttack(Monster computer) {
+        Random rand = new Random();
+        float hitChance = rand.nextFloat();
+        if (hitChance > 0.2)  {
+            int attackSlot = rand.nextInt(computer.getAllAttacks().size());
+            attack(computer.getAttack(attackSlot), currentUser.getStartingMonster());
+        }
     }
 
 //    private void turn() {
