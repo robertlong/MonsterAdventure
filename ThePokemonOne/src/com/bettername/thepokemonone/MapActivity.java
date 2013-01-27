@@ -84,11 +84,6 @@ public class MapActivity extends Activity
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
     
-    public void updateWithNewLocation(Location location)
-    {
-        
-        //
-    }
     
     @Override
     protected void onPause()

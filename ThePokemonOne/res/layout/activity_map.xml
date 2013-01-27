@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="com.google.android.gms.maps.MapFragment"
+        map:mapType="terrain"
         map:cameraTargetLat="39.4"
         map:cameraTargetLng="-99.5"
         map:cameraTilt="0"
