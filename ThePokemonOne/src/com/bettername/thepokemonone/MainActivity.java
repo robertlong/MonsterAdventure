@@ -12,6 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+
+import com.bettername.thepokemoneone.model.Player;
+import com.bettername.thepokemoneone.model.Player.Gender;
 
 public class MainActivity extends Activity
 {
@@ -23,7 +27,8 @@ public class MainActivity extends Activity
         setContentView(R.layout.activity_main);
         
         Config.setContext(appContext);
-        // Create user
+        Player.createCurrentUser();
+        
         
        
         final Button boyButton = (Button)findViewById(R.id.boy_button);
@@ -34,24 +39,23 @@ public class MainActivity extends Activity
         boyButton.getBackground().setColorFilter(new LightingColorFilter(mul, 0X00000000));
         girlButton.getBackground().setColorFilter(new LightingColorFilter(mul, 0X00000000));
         
-        boyButton.setOnClickListener(new OnClickListener(){
-
+        boyButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v)
             {
             	boyButton.getBackground().clearColorFilter();
                 girlButton.getBackground().setColorFilter(new LightingColorFilter(mul, 0X00000000));
+                Player.getCurrentUser().setGender(Gender.Male);
             }
         });
         
-        
-        girlButton.setOnClickListener(new OnClickListener(){
-
+        girlButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v)
             {
                 boyButton.getBackground().setColorFilter(new LightingColorFilter(mul, 0X00000000));
             	girlButton.getBackground().clearColorFilter();
+            	Player.getCurrentUser().setGender(Gender.Female);
             }
         });
         
@@ -64,6 +68,9 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v)
             {
+            	EditText usernameText = (EditText)findViewById(R.id.username_edittext);
+            	String username = usernameText.getText().toString();
+            	Player.getCurrentUser().setUsername(username);
                 Intent continueIntent = new Intent(appContext, CreaturePickActivity.class);
                 appContext.startActivity(continueIntent);
             }

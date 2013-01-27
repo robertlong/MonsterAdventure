@@ -14,10 +14,10 @@ public class Player {
 		;
 	}
 	
-	public String username;
-	public String uuid;
-	public Gender gender;
-	public WebMonster startingMonster;
+	private String username;
+	private String uuid;
+	private Gender gender;
+	private WebMonster startingMonster;
 	private List<Monster> monsters = new ArrayList<Monster>();
 	public double[] location = new double[2];
 	
@@ -35,24 +35,47 @@ public class Player {
 		return currentUser;
 	}
 	
+
+	public Player() {
+	}
 	
-	public Player(String username, Gender gender) {
-		this.username = username;
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+	
+	
+//	public Player(String username, Gender gender) {
+//		this.username = username;
+//		this.gender = gender;
+//	}
 	
 	public void addMonster(Monster monster) {
 		monsters.add(monster);
 	}
 	
-	public static Player createCurrentUser(String username, Gender gender, Monster monster) {
-		Player.currentUser = new Player(username, gender);
+	public static Player createCurrentUser() {
+		Player.currentUser = new Player();
 		String udid = Config.getUdid();
 		Player.currentUser.uuid = "510485f13a812433ed312c17";
-		Player.currentUser.startingMonster = monster.getWebMonster();
-		Player.currentUser.monsters.add(monster);
 		return currentUser;
 	}
+				
+//	public static Player createCurrentUser(String username, Gender gender, Monster monster) {
+//		Player.currentUser = new Player(username, gender);
+//		String udid = Config.getUdid();
+//		Player.currentUser.uuid = "510485f13a812433ed312c17";
+//		Player.currentUser.startingMonster = monster.getWebMonster();
+//		Player.currentUser.monsters.add(monster);
+//		return currentUser;
+//	}
 	
 
     public boolean isAnyoneThere() {
