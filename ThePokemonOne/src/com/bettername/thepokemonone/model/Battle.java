@@ -6,10 +6,8 @@ This class will access the current user singleton
 
 */
 
-import android.graphics.ImageFormat;
-
-
 import java.util.Random;
+
 
 public class Battle {
 

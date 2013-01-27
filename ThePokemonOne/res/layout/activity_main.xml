@@ -28,19 +28,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/boy_button"
         android:layout_centerHorizontal="true"
-        android:imeOptions="actionNext"
         android:layout_marginTop="120dp"
         android:ems="10"
-        android:hint="Type your name here" />
+        android:singleLine="true"
+        android:hint="Type your name here"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionGo" />
 
     <Button
         android:id="@+id/continue_button"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/username_edittext"
+        android:layout_centerHorizontal="true"
         android:layout_x="42dp"
         android:layout_y="415dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/username_edittext"
         android:background="@drawable/continuearrow" />
 
 </RelativeLayout>
