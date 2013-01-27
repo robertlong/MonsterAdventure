@@ -8,7 +8,7 @@
 	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
 	<classpathentry kind="lib" path="libs/commons-codec-1.6.jar"/>
 	<classpathentry kind="lib" path="libs/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="libs/android-async-http-1.4.2.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/google-play-services_lib"/>
+	<classpathentry kind="lib" path="libs/android-async-http-1.4.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
