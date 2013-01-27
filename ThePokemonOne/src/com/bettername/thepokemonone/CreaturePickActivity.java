@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone.activity;
+package com.bettername.thepokemonone;
 
 import org.json.JSONArray;
 import org.json.JSONException;

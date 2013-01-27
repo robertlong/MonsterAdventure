@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone.activity;
+package com.bettername.thepokemonone;
 
 import com.bettername.thepokemonone.R;
 import com.bettername.thepokemonone.R.layout;
