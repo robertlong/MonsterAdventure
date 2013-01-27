@@ -3,6 +3,9 @@ package com.bettername.thepokemonone;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -94,8 +97,20 @@ public class MapActivity extends Activity implements POI.CallBackListener,
         POI poi = new POI();
         poi.getPOIs(location.getLatitude(), location.getLongitude(),
                 (double) location.getAccuracy(), this);
-        new TimerThing().execute(5000);
+        new TimerThing().execute(10000);
         
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+        ft.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
+        // Create and show the dialog.
+        DialogFragment newFragment = EnvelopeFragment.newInstance();
+        
+        newFragment.show(ft, "envelope");
     }
     
     @Override
