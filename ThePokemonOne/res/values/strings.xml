@@ -3,13 +3,10 @@
 
     <string name="app_name">Creature Quest</string>
     <string name="menu_settings">About</string>
-<<<<<<< HEAD
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_story">StoryActivity</string>
-=======
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="title_activity_battle">BattleActivity</string>
->>>>>>> 216c5d18f29d6d43943c4d02add460eceefaea54
 
 </resources>

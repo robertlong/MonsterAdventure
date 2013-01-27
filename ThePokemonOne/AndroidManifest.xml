@@ -51,12 +51,11 @@
         </activity>
         <activity
             android:name="com.bettername.thepokemonone.CreaturePickActivity"
-            android:parentActivityName="MainActivity" />
+            android:parentActivityName="MainActivity" >
+        </activity>
         <activity
-<<<<<<< HEAD
             android:name="com.bettername.thepokemonone.StoryActivity"
             android:label="@string/title_activity_story" >
-=======
             android:name="com.bettername.thepokemonone.BattleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_battle"
@@ -65,7 +64,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bettername.thepokemonone.MapActivity" />
->>>>>>> 216c5d18f29d6d43943c4d02add460eceefaea54
         </activity>
     </application>
 
