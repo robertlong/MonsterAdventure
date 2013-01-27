@@ -13,7 +13,7 @@ import com.loopj.android.http.RequestParams;
 public class POI
 {
     
-    private class MyLocation
+    public class MyLocation
     {
         double latitude;
         double longitude;

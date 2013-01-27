@@ -134,9 +134,15 @@ public class MapActivity extends Activity implements POI.CallBackListener
     }
     
     @Override
-    public void callBack(List<Place> p)
+    public void callBack(List<Place> places)
     {
-        
+        for(Place place : places){
+            map.addMarker(new MarkerOptions()
+            .position(new LatLng(place.coordinates[0], place.coordinates[1]))
+            .title(place.name)
+            .icon(BitmapDescriptorFactory
+                    .fromResource(R.drawable.rinodogsmaller)));
+        }
     }
     
 }
