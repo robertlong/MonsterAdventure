@@ -42,8 +42,8 @@ public class MainActivity extends Activity implements OnClickListener
 
 	        // Tried reusing instance of media player
 	        // but that resulted in system crashes...  
-	        MediaPlayer mp = MediaPlayer.create(this, R.raw.pirate);
-	        mp.start();
+	        Config.mp = MediaPlayer.create(this, R.raw.pirate);
+	        Config.mp.start();
 	        
 	        // Tried passing path directly, but kept getting 
 	        // "Prepare failed.: status=0x1"

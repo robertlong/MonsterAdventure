@@ -1,11 +1,15 @@
 package com.bettername.thepokemonone;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.provider.Settings.Secure;
 
 
 public class Config {
 
 	private static Context context;
+	public static MediaPlayer mp = null;
+	
+	
 	public static void setContext(Context context) {
 		Config.context = context;
 	}
