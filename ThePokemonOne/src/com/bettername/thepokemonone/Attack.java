@@ -8,7 +8,8 @@ public enum Attack {
 	Swirly("Swirly", false, 10, 10, .2),
 	Wedgie("Wedgie", false, 10, 10, .2)
 	;
-	
+
+
 	static int count;
     private int id;
     private String name;
