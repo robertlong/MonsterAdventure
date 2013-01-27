@@ -148,7 +148,7 @@ public class MainActivity extends Activity implements OnClickListener
 							public void onClick(DialogInterface dialog, int which)
 							{
 								Intent continueIntent = new Intent(appContext,
-										MapActivity.class);
+										BattleActivity.class);
 								appContext.startActivity(continueIntent);
 							}
 						});

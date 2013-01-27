@@ -33,6 +33,7 @@ public class BattleActivity extends Activity
         setContentView(R.layout.activity_battle);
         pigBat = (ImageView) findViewById(R.id.pigbat_battle);
         rhinoDog = (ImageView) findViewById(R.id.rhinodog_battle);
+        /*
         slideInLeft = AnimationUtils.loadAnimation(this,
                 android.R.anim.slide_in_left);
         slideInRight = AnimationUtils.loadAnimation(this,
@@ -42,16 +43,20 @@ public class BattleActivity extends Activity
                 android.R.interpolator.accelerate_decelerate);
         slideInLeft.setInterpolator(this,
                 android.R.interpolator.accelerate_decelerate);
+                */
     }
     
     @Override
     protected void onPostCreate(Bundle savedInstanceState)
     {
         super.onPostCreate(savedInstanceState);
-        pigBat.startAnimation(slideInLeft);
-        rhinoDog.startAnimation(slideInRight);
         pigBat.setVisibility(View.VISIBLE);
         rhinoDog.setVisibility(View.VISIBLE);
+        /*
+        pigBat.startAnimation(slideInLeft);
+        rhinoDog.startAnimation(slideInRight);
+        */
+        
     }
     
     /**
