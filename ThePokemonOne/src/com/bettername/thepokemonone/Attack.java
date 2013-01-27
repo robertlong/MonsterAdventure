@@ -40,6 +40,10 @@ public enum Attack {
         return this.strength;
     }
 
+    public int getDamageRange() {
+        return getMaxDamageRange()-getMinDamageRange();
+    }
+
     public void setStrength(int strength) {
         this.strength = strength;
     }
