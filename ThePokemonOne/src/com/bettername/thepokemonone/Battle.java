@@ -7,15 +7,17 @@ This class will access the current user singleton
 */
 
 import android.graphics.ImageFormat;
-import com.bettername.thepokemonone.monster.Monster;
+
+import com.bettername.thepokemoneone.model.Monster;
+import com.bettername.thepokemoneone.model.Player;
 
 import java.util.Random;
 
 public class Battle {
 	
 	public int turnNumber;
-	public User opponent;
-    public User currentUser;
+	public Player opponent;
+    public Player currentUser;
 	
 	public Battle() {
 
@@ -39,7 +41,7 @@ public class Battle {
         }
     }
 
-    private void declareWinner(User winner) {
+    private void declareWinner(Player winner) {
 
     }
 

@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone.monster;
+package com.bettername.thepokemoneone.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,8 @@ import com.bettername.thepokemonone.Item;
 
 public abstract class Monster {
 	
-	private String nickName;
+	private String id = "began monster";
+	private String nickname;
 	private List<Attack> addedAttacks;
 	private int currentHealth;
 	private int exp;
@@ -17,12 +18,24 @@ public abstract class Monster {
 	public abstract int getMaxHealth();
 	public abstract List<Attack> getBaseAttacks();
 	
+	public class WebMonster {
+		String id;
+		String nickname;
+		public WebMonster(String id, String nickname) {
+			this.id = id;
+			this.nickname = nickname;
+		}
+	}
+	
 	
 	
 	public Monster(String nickName) {
-		this.nickName = nickName;
+		this.nickname = nickName;
 	}
 	
+	public WebMonster getWebMonster() {
+		return new WebMonster(this.id, nickname);
+	}
 	
 	public List<Attack> getAddedAttacks() {
 		return this.addedAttacks;
@@ -48,7 +61,7 @@ public abstract class Monster {
     }
 
 	public String getNickname() {
-		return this.nickName;
+		return this.nickname;
 	}
 	public int getCurrentHealth() {
 		return currentHealth;

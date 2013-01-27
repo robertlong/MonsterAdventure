@@ -1,47 +1,56 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AbsoluteLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/userback"
     tools:context=".MainActivity" >
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp" >
-
-        <Button
-            android:id="@+id/boy_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Boy" />
-
-        <Button
-            android:id="@+id/girl_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Girl" />
+        android:layout_height="wrap_content" >
     </LinearLayout>
+
+    <AbsoluteLayout
+        android:id="@+id/AbsoluteLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/boy_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_x="17dp"
+        android:layout_y="47dp"
+        android:background="@drawable/boyfacebanner" />
+
+    <Button
+        android:id="@+id/girl_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_x="199dp"
+        android:layout_y="44dp"
+        android:background="@drawable/girlfacebanner" />
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:hint="Create a username"
-        android:ems="10" />
+        android:layout_x="70dp"
+        android:layout_y="294dp"
+        android:ems="10"
+        android:hint="Create a username" >
+
+        <requestFocus />
+    </EditText>
 
     <Button
         android:id="@+id/continue_button"
-        android:layout_width="wrap_content"
+        android:layout_width="266dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:text="Continue" />
+        android:layout_x="54dp"
+        android:layout_y="410dp"
+        android:text="Button" />
 
-</RelativeLayout>
+</AbsoluteLayout>

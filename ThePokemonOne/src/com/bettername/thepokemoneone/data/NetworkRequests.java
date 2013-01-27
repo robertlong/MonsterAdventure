@@ -9,8 +9,8 @@ import android.os.AsyncTask;
 import android.provider.SyncStateContract.Constants;
 import android.text.style.SuperscriptSpan;
 
-import com.bettername.thepokemonone.User;
-import com.bettername.thepokemonone.monster.Monster;
+import com.bettername.thepokemoneone.model.Monster;
+import com.bettername.thepokemoneone.model.Player;
 import com.google.gson.Gson;
 
 
@@ -74,8 +74,8 @@ public class NetworkRequests {
 	}
 	
 	public void getUser(int userID, NetworkRequestDelegate<Monster> delegate ) {
-		Request<User> request = new Request<User>();
-		request.aClass = User.class; 
+		Request<Player> request = new Request<Player>();
+		request.aClass = Player.class; 
 		request.execute(kURLUser);
 	}
 	
