@@ -74,9 +74,10 @@ public class MapActivity extends Activity
         youMarker = map.addMarker(new MarkerOptions()
                 .position(you)
                 .title("You")
-                .snippet("You")
+                .snippet("Your creature")
                 .icon(BitmapDescriptorFactory
                         .fromResource(R.drawable.rinodogsmaller)));
+        youMarker.showInfoWindow();
         
         cameraPosition = new CameraPosition.Builder().target(you).zoom(17)
                 .bearing(0).tilt(90).build();
@@ -94,6 +95,13 @@ public class MapActivity extends Activity
     {
         locManager.removeUpdates(locationListener);
         super.onPause();
+    }
+    
+    @Override
+    protected void onStop()
+    {
+        locManager.removeUpdates(locationListener);
+        super.onStop();
     }
     
     @Override
