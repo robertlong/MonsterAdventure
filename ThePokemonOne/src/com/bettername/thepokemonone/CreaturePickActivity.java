@@ -39,8 +39,26 @@ public class CreaturePickActivity extends Activity {
 
 
 		final AsyncHttpResponseHandler handler = new JsonHttpResponseHandler() {
+
+
+			@Override
+			public void handleSuccessMessage(String responseBody)  {
+				System.out.println("***************");
+				System.out.println(responseBody);
+			}
+
+			@Override
+			public void onSuccess(JSONObject timeline) {
+				System.out.println("***************");
+			
+				Intent continueIntent = new Intent(appContext, StoryActivity.class);
+				appContext.startActivity(continueIntent);
+			
+			}
+
 			@Override
 			public void onSuccess(JSONArray timeline) {
+				System.out.println("***************");
 				// Pull out the first event on the public timeline
 				JSONObject firstEvent = null;
 				try {
