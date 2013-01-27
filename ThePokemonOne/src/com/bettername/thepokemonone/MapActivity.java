@@ -1,24 +1,23 @@
 package com.bettername.thepokemonone;
 
-import com.google.android.gms.maps.CameraUpdate;
+import android.app.Activity;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.MapFragment;
-
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Context;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
 
 public class MapActivity extends Activity
 {
@@ -26,6 +25,8 @@ public class MapActivity extends Activity
     Marker youMarker;
     CameraPosition cameraPosition;
     GoogleMap map;
+    LocationManager locManager;
+    LocationListener locationListener;
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,7 +36,7 @@ public class MapActivity extends Activity
         // Show the Up button in the action bar.
         getActionBar().setDisplayHomeAsUpEnabled(true);
         
-        LocationListener locationListener = new LocationListener()
+        locationListener = new LocationListener()
         {
             public void onLocationChanged(Location location)
             {
@@ -57,7 +58,6 @@ public class MapActivity extends Activity
             }
         };
         
-        LocationManager locManager;
         locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000L,
                 500.0f, locationListener);
@@ -88,9 +88,16 @@ public class MapActivity extends Activity
         {
             you = new LatLng(location.getLatitude(), location.getLongitude());
             youMarker.setPosition(you);
-            //CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(you);
-            //map.moveCamera(cameraUpdate);
+            // CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(you);
+            // map.moveCamera(cameraUpdate);
         }
+    }
+    
+    @Override
+    protected void onPause()
+    {
+        locManager.removeUpdates(locationListener);
+        super.onPause();
     }
     
     @Override
