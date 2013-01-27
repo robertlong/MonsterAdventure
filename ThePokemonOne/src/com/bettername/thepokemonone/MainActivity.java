@@ -25,7 +25,7 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v)
             {
-                Intent continueIntent = new Intent(appContext, MapActivity.class);
+                Intent continueIntent = new Intent(appContext, CreaturePickActivity.class);
                 appContext.startActivity(continueIntent);
             }
         });
