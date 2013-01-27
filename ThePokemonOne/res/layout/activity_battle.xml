@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/pigbat" />
 
     <ImageView
         android:id="@+id/rhinodog_battle"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-		android:layout_marginTop="90dp"
+		android:layout_marginTop="110dp"
         android:layout_toLeftOf="@+id/imageView1"
         android:src="@drawable/rhinodog_mirrored" />
 
