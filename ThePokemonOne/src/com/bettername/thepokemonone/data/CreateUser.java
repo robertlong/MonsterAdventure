@@ -29,6 +29,8 @@ public class CreateUser {
 		String jsonString = new Gson().toJson(user);
 		System.out.println(jsonString);
 		RequestParams rp = new RequestParams();
+		System.out.println(rp.toString());
+		System.out.println(rp);
 		rp.put("player", jsonString);
 		PokeServClient.post("players", rp,
 				new JsonHttpResponseHandler() {
