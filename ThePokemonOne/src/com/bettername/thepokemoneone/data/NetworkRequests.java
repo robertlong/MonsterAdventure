@@ -1,4 +1,4 @@
-package Data;
+package com.bettername.thepokemoneone.data;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;

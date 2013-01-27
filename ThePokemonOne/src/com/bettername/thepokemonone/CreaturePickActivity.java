@@ -1,5 +1,11 @@
 package com.bettername.thepokemonone;
 
+import java.util.concurrent.ExecutionException;
+
+import org.apache.http.nio.reactor.IOReactorException;
+
+import com.bettername.thepokemoneone.data.CreateUser;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.LightingColorFilter;
@@ -67,6 +73,18 @@ public class CreaturePickActivity extends Activity {
             public void onClick(View v)
             {
             	// PING DB W/ CREATE
+            	try {
+					CreateUser.blah();
+				} catch (IOReactorException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
     }
