@@ -94,7 +94,7 @@ public class MapActivity extends Activity implements POI.CallBackListener,
         POI poi = new POI();
         poi.getPOIs(location.getLatitude(), location.getLongitude(),
                 (double) location.getAccuracy(), this);
-        new TimerThing().execute(10000);
+        new TimerThing().execute(5000);
         
     }
     
