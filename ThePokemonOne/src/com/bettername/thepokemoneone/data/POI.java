@@ -35,7 +35,7 @@ public class POI
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams rp = new RequestParams();
         rp.put("place", json);
-        client.post("https://monsteradventure.fwd.wf/api/places", rp,
+        client.get("https://monsteradventure.fwd.wf/api/places", rp,
                 new AsyncHttpResponseHandler()
                 {
                     @Override
