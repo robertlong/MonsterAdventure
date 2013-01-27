@@ -1,5 +1,7 @@
 package com.bettername.thepokemonone;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
@@ -11,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.bettername.thepokemoneone.data.POI;
+import com.bettername.thepokemoneone.model.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -131,7 +134,7 @@ public class MapActivity extends Activity implements POI.CallBackListener
     }
     
     @Override
-    public void callBack(Object o)
+    public void callBack(List<Place> p)
     {
         
     }

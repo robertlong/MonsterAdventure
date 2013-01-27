@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.bettername.thepokemoneone.model.Place;
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-oid.http.RequestParams;
 
 public class POI
 {
     
-    private class Place
+    private class MyLocation
     {
         double latitude;
         double longitude;
         double radius;
         
-        public Place(double latitude, double longitude, double radius)
+        public MyLocation(double latitude, double longitude, double radius)
         {
             this.latitude = latitude;
             this.longitude = longitude;
@@ -29,7 +29,7 @@ public class POI
     
     public void getPOIs(double latitude, double longitude, double radius, final CallBackListener callback)
     {
-        Place place = new Place(latitude, longitude, radius);
+        MyLocation place = new MyLocation(latitude, longitude, radius);
         Gson gson = new Gson();
         String json = gson.toJson(place);
         AsyncHttpClient client = new AsyncHttpClient();
