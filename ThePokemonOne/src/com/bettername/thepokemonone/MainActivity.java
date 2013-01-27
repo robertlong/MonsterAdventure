@@ -29,7 +29,6 @@ public class MainActivity extends Activity
         Config.setContext(appContext);
         Player.createCurrentUser();
         
-        
        
         final Button boyButton = (Button)findViewById(R.id.boy_button);
         final Button girlButton = (Button)findViewById(R.id.girl_button);

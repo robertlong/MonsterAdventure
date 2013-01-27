@@ -1,9 +1,14 @@
 package com.bettername.thepokemoneone.data;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+oid.http.RequestParams;
 
 public class POI
 {
@@ -36,12 +41,16 @@ public class POI
                     @Override
                     public void onSuccess(String response)
                     {
-                        callback.callBack(response);
+                    	Gson gson = new Gson();
+                    	Place[] places = gson.fromJson(response, Place[].class);
+                    	List<Place> placeList = new ArrayList<Place>();
+                    	placeList.addAll(Arrays.asList(places));
+                        callback.callBack(placeList);
                     }
                 });
     }
     public interface CallBackListener{
-        public void callBack(Object o);
+        public void callBack(List<Place> o);
     }
     
 }
