@@ -46,12 +46,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="MapActivity"
+            android:name="com.bettername.thepokemonone.MapActivity"
             android:parentActivityName="MainActivity" >
         </activity>
         <activity
-            android:name=".CreaturePickActivity"
-            android:parentActivityName="MainActivity"/>
+            android:name="com.bettername.thepokemonone.CreaturePickActivity"
+            android:parentActivityName="MainActivity" />
+        <activity
+            android:name="com.bettername.thepokemonone.BattleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_battle"
+            android:parentActivityName="com.bettername.thepokemonone.MapActivity"
+            android:theme="@style/FullscreenTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bettername.thepokemonone.MapActivity" />
+        </activity>
     </application>
 
 </manifest>
