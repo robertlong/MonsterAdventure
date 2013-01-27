@@ -1,5 +1,6 @@
 package com.bettername.thepokemonone;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -77,7 +78,7 @@ public class MapActivity extends Activity
                         .fromResource(R.drawable.rinodogsmaller)));
         youMarker.setPosition(you);
         cameraPosition = new CameraPosition.Builder().target(you).zoom(17)
-                .bearing(0).tilt(30).build();
+                .bearing(0).tilt(90).build();
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
     
@@ -87,10 +88,9 @@ public class MapActivity extends Activity
         {
             you = new LatLng(location.getLatitude(), location.getLongitude());
             youMarker.setPosition(you);
-            cameraPosition = new CameraPosition.Builder().target(you).build();
-            //map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            //CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(you);
+            //map.moveCamera(cameraUpdate);
         }
-        
     }
     
     @Override
