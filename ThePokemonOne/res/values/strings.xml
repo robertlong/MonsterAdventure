@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">The Pokemon One</string>
-    <string name="hello_world">Words go here and such</string>
-    <string name="menu_settings">Things and such</string>
+    <string name="app_name">Creature Quest</string>
+    <string name="menu_settings">About</string>
 
 </resources>
