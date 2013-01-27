@@ -6,6 +6,7 @@ This class will access the current user singleton
 
 */
 
+import android.graphics.ImageFormat;
 import com.bettername.thepokemonone.monster.Monster;
 
 import java.util.Random;
@@ -28,12 +29,18 @@ public class Battle {
     }
 
     private void turn() {
-        if (currentUser.isAnyoneThere() && opponent.isAnyoneThere()) {
-            // If both users have creatures left turn code
-            turnNumber++;
+        if (!currentUser.isAnyoneThere()) {
+            declareWinner(opponent);
+        } else if (!opponent.isAnyoneThere()) {
+            declareWinner(currentUser);
         } else {
-            // Code if one user is out of creatures
+            // Continue turn logic
+            turnNumber++;
         }
+    }
+
+    private void declareWinner(User winner) {
+
     }
 
 
