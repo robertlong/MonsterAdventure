@@ -30,10 +30,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
         android:ems="10"
-        android:singleLine="true"
-        android:hint="Type your name here"
+        android:hint="@string/type_your_name_here"
         android:imeActionLabel="Done"
-        android:imeOptions="actionGo" />
+        android:imeOptions="actionGo"
+        android:singleLine="true" />
 
     <Button
         android:id="@+id/continue_button"
@@ -41,8 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/username_edittext"
         android:layout_centerHorizontal="true"
-        android:layout_x="42dp"
-        android:layout_y="415dp"
         android:background="@drawable/continuearrow" />
 
 </RelativeLayout>
