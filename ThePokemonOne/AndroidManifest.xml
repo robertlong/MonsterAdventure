@@ -38,7 +38,7 @@
 
         <activity
             android:name="com.bettername.thepokemonone.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" android:screenOrientation="sensorPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,21 +47,19 @@
         </activity>
         <activity
             android:name="com.bettername.thepokemonone.MapActivity"
-            android:parentActivityName="MainActivity" >
+            android:parentActivityName="MainActivity" android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name="com.bettername.thepokemonone.CreaturePickActivity"
-            android:parentActivityName="MainActivity" >
+            android:parentActivityName="MainActivity" android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name="com.bettername.thepokemonone.StoryActivity"
-            android:label="@string/title_activity_story" />
+            android:label="@string/title_activity_story" android:screenOrientation="sensorPortrait"/>
         <activity
             android:name="com.bettername.thepokemonone.BattleActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_battle"
-            android:parentActivityName="com.bettername.thepokemonone.MapActivity"
-            android:theme="@style/FullscreenTheme" >
+            android:parentActivityName="com.bettername.thepokemonone.MapActivity" android:screenOrientation="sensorPortrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bettername.thepokemonone.MapActivity" />
