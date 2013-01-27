@@ -12,8 +12,8 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.bettername.thepokemoneone.data.POI;
-import com.bettername.thepokemoneone.model.Place;
+import com.bettername.thepokemonone.data.POI;
+import com.bettername.thepokemonone.model.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;

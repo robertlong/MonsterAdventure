@@ -8,8 +8,8 @@ This class will access the current user singleton
 
 import android.graphics.ImageFormat;
 
-import com.bettername.thepokemoneone.model.Monster;
-import com.bettername.thepokemoneone.model.Player;
+import com.bettername.thepokemonone.model.Monster;
+import com.bettername.thepokemonone.model.Player;
 
 import java.util.Random;
 
@@ -36,16 +36,16 @@ public class Battle {
         reciever.setCurrentHealth(reciever.getCurrentHealth()-attackDamage);
     }
 
-    private void turn() {
-        if (!currentUser.isAnyoneThere()) {
-            declareWinner(opponent);
-        } else if (!opponent.isAnyoneThere()) {
-            declareWinner(currentUser);
-        } else {
-            // Continue turn logic
-            turnNumber++;
-        }
-    }
+//    private void turn() {
+//        if (!currentUser.isAnyoneThere()) {
+//            declareWinner(opponent);
+//        } else if (!opponent.isAnyoneThere()) {
+//            declareWinner(currentUser);
+//        } else {
+//            // Continue turn logic
+//            turnNumber++;
+//        }
+//    }
 
     private void run() {
         declareWinner(null);

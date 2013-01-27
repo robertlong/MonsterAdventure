@@ -18,8 +18,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import com.bettername.thepokemoneone.model.Player;
-import com.bettername.thepokemoneone.model.Player.Gender;
+import com.bettername.thepokemonone.model.Player;
+import com.bettername.thepokemonone.model.Player.Gender;
 
 public class MainActivity extends Activity
 {
