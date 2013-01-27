@@ -27,7 +27,6 @@ public class CreaturePickActivity extends Activity {
 		final int add = 0x22222222;
 
 		creature1.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				creature1.getBackground().setColorFilter(new LightingColorFilter(mul, add));
@@ -38,7 +37,6 @@ public class CreaturePickActivity extends Activity {
 		});
 
 		creature2.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				creature2.getBackground().setColorFilter(new LightingColorFilter(mul, add));
@@ -49,7 +47,6 @@ public class CreaturePickActivity extends Activity {
 		});
 
 		creature3.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				creature3.getBackground().setColorFilter(new LightingColorFilter(mul, add));
