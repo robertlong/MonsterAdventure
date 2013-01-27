@@ -9,6 +9,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -136,6 +137,7 @@ public class MapActivity extends Activity implements POI.CallBackListener
     @Override
     public void callBack(List<Place> places)
     {
+        Log.w("POI", places.toString());
         for(Place place : places){
             map.addMarker(new MarkerOptions()
             .position(new LatLng(place.coordinates[0], place.coordinates[1]))
