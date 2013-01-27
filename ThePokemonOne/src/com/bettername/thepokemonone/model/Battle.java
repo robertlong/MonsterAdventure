@@ -18,7 +18,6 @@ public class Battle {
     public Battle(Player currentUser, Player opponent) {
         this.currentUser = currentUser;
         this.opponent = opponent;
-
     }
 
     public Battle(Player currentUser, Monster wildMonster) {
@@ -32,6 +31,15 @@ public class Battle {
         reciever.setCurrentHealth(reciever.getCurrentHealth()-attackDamage);
     }
 
+    private void aiAttack(Monster computer) {
+        Random rand = new Random();
+        float hitChance = rand.nextFloat();
+        if (hitChance > 0.2)  {
+            int attackSlot = rand.nextInt(computer.getAllAttacks().size());
+            attack(computer.getAttack(attackSlot), currentUser.getStartingMonster());
+        }
+    }
+
 //    private void turn() {
 //        if (!currentUser.isAnyoneThere()) {
 //            declareWinner(opponent);
@@ -42,6 +50,19 @@ public class Battle {
 //            turnNumber++;
 //        }
 //    }
+
+    public boolean isBattleOver() {
+        if (!(currentUser.getStartingMonster().isAlive())) {
+            declareWinner(currentUser);
+            return true;
+        }
+        else if (!(opponent.getStartingMonster().isAlive())) {
+            declareWinner(opponent);
+            return true;
+        }
+        else
+            return false;
+    }
 
     private void run() {
         declareWinner(null);

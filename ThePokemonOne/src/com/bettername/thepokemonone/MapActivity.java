@@ -4,23 +4,21 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.bettername.thepokemonone.R;
-import com.bettername.thepokemonone.R.drawable;
-import com.bettername.thepokemonone.R.id;
-import com.bettername.thepokemonone.R.layout;
-import com.bettername.thepokemonone.R.menu;
 import com.bettername.thepokemonone.data.POI;
 import com.bettername.thepokemonone.model.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -28,7 +26,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends Activity implements POI.CallBackListener
+public class MapActivity extends Activity implements POI.CallBackListener,
+        OnMarkerClickListener
 {
     LatLng you;
     Marker youMarker;
@@ -36,6 +35,7 @@ public class MapActivity extends Activity implements POI.CallBackListener
     GoogleMap map;
     LocationManager locManager;
     LocationListener locationListener;
+    Context appContext = this;
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -94,6 +94,8 @@ public class MapActivity extends Activity implements POI.CallBackListener
         POI poi = new POI();
         poi.getPOIs(location.getLatitude(), location.getLongitude(),
                 (double) location.getAccuracy(), this);
+        new TimerThing().execute(5000);
+        
     }
     
     @Override
@@ -155,4 +157,35 @@ public class MapActivity extends Activity implements POI.CallBackListener
         }
     }
     
+    @Override
+    public boolean onMarkerClick(Marker marker)
+    {
+        return false;
+    }
+    
+    private class TimerThing extends AsyncTask<Integer, Void, Void>
+    {
+        
+        @Override
+        protected Void doInBackground(Integer... params)
+        {
+            try
+            {
+                Thread.sleep(params[0]);
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+            return null;
+        }
+        
+        @Override
+        protected void onPostExecute(Void result)
+        {
+            super.onPostExecute(result);
+            Intent battleIntent = new Intent(appContext, BattleActivity.class);
+            appContext.startActivity(battleIntent);
+        }
+    }
 }

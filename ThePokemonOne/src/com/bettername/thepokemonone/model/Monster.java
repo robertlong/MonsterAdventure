@@ -25,7 +25,9 @@ public abstract class Monster {
 		}
 	}
 	
-	
+	public Attack getAttack(int index)  {
+        return getAllAttacks().get(index);
+    }
 	
 	public Monster(String nickName) {
 		this.nickname = nickName;
