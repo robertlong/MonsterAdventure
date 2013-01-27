@@ -10,6 +10,7 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bettername.thepokemoneone.data.POI;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -19,7 +20,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends Activity
+public class MapActivity extends Activity implements POI.CallBackListener
 {
     LatLng you;
     Marker youMarker;
@@ -68,6 +69,10 @@ public class MapActivity extends Activity
                 .getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
         you = new LatLng(location.getLatitude(), location.getLongitude());
         
+        POI poi = new POI();
+        poi.getPOIs(location.getLatitude(), location.getLongitude(),
+                (double) location.getAccuracy(), this);
+        
         GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(
                 R.id.map)).getMap();
         
@@ -83,7 +88,6 @@ public class MapActivity extends Activity
                 .bearing(0).tilt(90).build();
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
-    
     
     @Override
     protected void onPause()
@@ -124,6 +128,12 @@ public class MapActivity extends Activity
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    public void callBack(Object o)
+    {
+        
     }
     
 }
