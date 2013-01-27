@@ -47,13 +47,13 @@ public class MainActivity extends Activity
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("About")
                 .setMessage(
-                        "It's an app! Developed by:\n"
+                        "It's an app! Developed by:\n\n"
                                 + "Kristian\n"
                                 + "Nolan\n"
                                 + "Robert\n" 
-                                + "Will"
-                                + "Holly"
-                                + "Kyle")
+                                + "Will\n"
+                                + "Holly\n"
+                                + "Kyle\n")
                 .setNeutralButton("OK",
                         new DialogInterface.OnClickListener() {
                             @Override
