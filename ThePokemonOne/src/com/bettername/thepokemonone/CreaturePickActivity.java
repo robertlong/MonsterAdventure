@@ -66,9 +66,7 @@ public class CreaturePickActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-            	creature1.getBackground().clearColorFilter();
-            	creature2.getBackground().clearColorFilter();
-            	creature3.getBackground().setColorFilter(new LightingColorFilter(0xFFFFFFFF, 0X00000000	));
+            	// PING DB W/ CREATE
             }
         });
     }

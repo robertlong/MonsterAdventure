@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone;
+package Data;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.provider.SyncStateContract.Constants;
 import android.text.style.SuperscriptSpan;
 
+import com.bettername.thepokemonone.User;
 import com.bettername.thepokemonone.monster.Monster;
 import com.google.gson.Gson;
 

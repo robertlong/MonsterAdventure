@@ -20,6 +20,15 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        Config.setContext(appContext);
+        // Create user
+        
+       
+        
+        
+        
+        
         Button continueButton = (Button)findViewById(R.id.continue_button);
         continueButton.setOnClickListener(new OnClickListener(){
 
