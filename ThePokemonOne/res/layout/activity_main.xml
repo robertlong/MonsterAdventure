@@ -49,8 +49,8 @@
         android:id="@+id/continue_button"
         android:layout_width="266dp"
         android:layout_height="wrap_content"
-        android:layout_x="54dp"
-        android:layout_y="410dp"
-        android:text="Button" />
+        android:layout_x="42dp"
+        android:layout_y="415dp"
+		/>
 
 </AbsoluteLayout>
