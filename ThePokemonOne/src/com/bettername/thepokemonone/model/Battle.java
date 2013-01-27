@@ -40,17 +40,6 @@ public class Battle {
         }
     }
 
-//    private void turn() {
-//        if (!currentUser.isAnyoneThere()) {
-//            declareWinner(opponent);
-//        } else if (!opponent.isAnyoneThere()) {
-//            declareWinner(currentUser);
-//        } else {
-//            // Continue turn logic
-//            turnNumber++;
-//        }
-//    }
-
     public boolean isBattleOver() {
         if (!(currentUser.getStartingMonster().isAlive())) {
             declareWinner(currentUser);
