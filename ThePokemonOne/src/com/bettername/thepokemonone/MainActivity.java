@@ -17,6 +17,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import com.bettername.thepokemonone.R;
+import com.bettername.thepokemonone.R.id;
+import com.bettername.thepokemonone.R.layout;
+import com.bettername.thepokemonone.R.menu;
 import com.bettername.thepokemonone.model.Player;
 import com.bettername.thepokemonone.model.Player.Gender;
 

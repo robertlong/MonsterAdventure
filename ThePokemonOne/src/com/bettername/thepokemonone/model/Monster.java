@@ -3,8 +3,6 @@ package com.bettername.thepokemonone.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bettername.thepokemonone.Attack;
-import com.bettername.thepokemonone.Item;
 
 public abstract class Monster {
 	

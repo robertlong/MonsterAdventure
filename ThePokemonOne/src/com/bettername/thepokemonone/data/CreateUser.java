@@ -19,41 +19,21 @@ import android.os.AsyncTask;
 
 import com.bettername.thepokemonone.model.Player;
 import com.google.gson.Gson;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 public class CreateUser {
 
-	public void createUser(Player user) {
+	public void createUser(Player user, AsyncHttpResponseHandler handler) {
 
 		String jsonString = new Gson().toJson(user);
 		System.out.println(jsonString);
 		RequestParams rp = new RequestParams();
+		System.out.println(rp.toString());
+		System.out.println(rp);
 		rp.put("player", jsonString);
-		PokeServClient.post("players", rp,
-				new JsonHttpResponseHandler() {
-			@Override
-			public void onSuccess(JSONArray timeline) {
-				// Pull out the first event on the public timeline
-				JSONObject firstEvent = null;
-				try {
-					firstEvent = (JSONObject) timeline.get(0);
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				String tweetText = null;
-				try {
-					tweetText = firstEvent.getString("text");
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-				// Do something with the response
-				System.out.println(tweetText);
-			}
-		});
+		PokeServClient.post("players", rp, handler);
 
 		// HttpAsyncClient httpclient = null;
 		// try {

@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone;
+package com.bettername.thepokemonone.model;
 
 /*
 
@@ -8,8 +8,6 @@ This class will access the current user singleton
 
 import java.util.Random;
 
-import com.bettername.thepokemonone.model.Monster;
-import com.bettername.thepokemonone.model.Player;
 
 public class Battle {
 
