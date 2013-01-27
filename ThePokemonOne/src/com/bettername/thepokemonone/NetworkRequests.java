@@ -15,7 +15,8 @@ import com.google.gson.Gson;
 
 public class NetworkRequests {
 	
-	private static String kURLMonsterString = "http://";
+	private static String kURLMonster = "http://";
+	private static String kURLUser = "http://";
 	
 	private static String readUrl(String urlString) throws Exception {
 	    BufferedReader reader = null;
@@ -68,9 +69,15 @@ public class NetworkRequests {
 	public void getMonster(int monsterID, NetworkRequestDelegate<Monster> delegate) {
 		Request<Monster> request = new Request<Monster>();
 		request.aClass = Monster.class; 
-		request.execute(kURLMonsterString);
+		request.execute(kURLMonster);
 	}
-
+	
+	public void getUser(int userID, NetworkRequestDelegate<Monster> delegate ) {
+		Request<User> request = new Request<User>();
+		request.aClass = User.class; 
+		request.execute(kURLUser);
+	}
+	
 	
 	
 
