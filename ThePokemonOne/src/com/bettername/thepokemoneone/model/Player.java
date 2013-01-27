@@ -17,7 +17,16 @@ public class Player {
 	private String username;
 	private String uuid;
 	private Gender gender;
-	private WebMonster startingMonster;
+
+    public Monster getStartingMonster() {
+        return startingMonster;
+    }
+
+    public void setStartingMonster(Monster startingMonster) {
+        this.startingMonster = startingMonster;
+    }
+
+    private Monster startingMonster;
 	private List<Monster> monsters = new ArrayList<Monster>();
 	public double[] location = new double[2];
 	
@@ -38,6 +47,11 @@ public class Player {
 
 	public Player() {
 	}
+
+    public Player(Monster monster) {
+        startingMonster = monster;
+        monsters.add(monster);
+    }
 	
 	public void setGender(Gender gender) {
 		this.gender = gender;
