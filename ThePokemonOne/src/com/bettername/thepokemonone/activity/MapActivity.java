@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone;
+package com.bettername.thepokemonone.activity;
 
 import java.util.List;
 
@@ -12,6 +12,11 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bettername.thepokemonone.R;
+import com.bettername.thepokemonone.R.drawable;
+import com.bettername.thepokemonone.R.id;
+import com.bettername.thepokemonone.R.layout;
+import com.bettername.thepokemonone.R.menu;
 import com.bettername.thepokemonone.data.POI;
 import com.bettername.thepokemonone.model.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;

@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone;
+package com.bettername.thepokemonone.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.bettername.thepokemonone.R;
+import com.bettername.thepokemonone.R.id;
+import com.bettername.thepokemonone.R.layout;
 import com.bettername.thepokemonone.data.CreateUser;
 import com.bettername.thepokemonone.model.Player;
 import com.bettername.thepokemonone.monster.Bradpitbull;

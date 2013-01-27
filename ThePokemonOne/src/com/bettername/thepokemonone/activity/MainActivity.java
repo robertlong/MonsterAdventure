@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone;
+package com.bettername.thepokemonone.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,6 +18,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import com.bettername.thepokemonone.Config;
+import com.bettername.thepokemonone.R;
+import com.bettername.thepokemonone.R.id;
+import com.bettername.thepokemonone.R.layout;
+import com.bettername.thepokemonone.R.menu;
 import com.bettername.thepokemonone.model.Player;
 import com.bettername.thepokemonone.model.Player.Gender;
 
