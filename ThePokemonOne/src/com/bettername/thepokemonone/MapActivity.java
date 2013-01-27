@@ -16,6 +16,7 @@ import com.bettername.thepokemonone.data.POI;
 import com.bettername.thepokemonone.model.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -23,7 +24,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends Activity implements POI.CallBackListener
+public class MapActivity extends Activity implements POI.CallBackListener,
+        OnMarkerClickListener
 {
     LatLng you;
     Marker youMarker;
@@ -89,6 +91,7 @@ public class MapActivity extends Activity implements POI.CallBackListener
         POI poi = new POI();
         poi.getPOIs(location.getLatitude(), location.getLongitude(),
                 (double) location.getAccuracy(), this);
+        
     }
     
     @Override
@@ -148,6 +151,12 @@ public class MapActivity extends Activity implements POI.CallBackListener
                             .defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             
         }
+    }
+    
+    @Override
+    public boolean onMarkerClick(Marker marker)
+    {
+        return false;
     }
     
 }
