@@ -34,6 +34,15 @@ public class Battle {
         reciever.setCurrentHealth(reciever.getCurrentHealth()-attackDamage);
     }
 
+    private void aiAttack(Monster computer) {
+        Random rand = new Random();
+        float hitChance = rand.nextFloat();
+        if (hitChance > 0.2)  {
+            int attackSlot = rand.nextInt(computer.getAllAttacks().size());
+            attack(computer.getAttack(attackSlot), currentUser.getStartingMonster());
+        }
+    }
+
 //    private void turn() {
 //        if (!currentUser.isAnyoneThere()) {
 //            declareWinner(opponent);
