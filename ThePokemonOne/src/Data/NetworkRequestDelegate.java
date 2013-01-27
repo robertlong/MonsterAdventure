@@ -1,4 +1,4 @@
-package com.bettername.thepokemonone;
+package Data;
 
 public interface NetworkRequestDelegate<T> {
 	
