@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +26,34 @@ public class MainActivity extends Activity
         // Create user
         
        
+        final Button boyButton = (Button)findViewById(R.id.boy_button);
+        final Button girlButton = (Button)findViewById(R.id.girl_button);
+
+        
+        final int mul = 0x8A8A8A8A;
+        boyButton.getBackground().setColorFilter(new LightingColorFilter(mul, 0X00000000));
+        girlButton.getBackground().setColorFilter(new LightingColorFilter(mul, 0X00000000));
+        
+        boyButton.setOnClickListener(new OnClickListener(){
+
+            @Override
+            public void onClick(View v)
+            {
+            	boyButton.getBackground().clearColorFilter();
+                girlButton.getBackground().setColorFilter(new LightingColorFilter(mul, 0X00000000));
+            }
+        });
+        
+        
+        girlButton.setOnClickListener(new OnClickListener(){
+
+            @Override
+            public void onClick(View v)
+            {
+                boyButton.getBackground().setColorFilter(new LightingColorFilter(mul, 0X00000000));
+            	girlButton.getBackground().clearColorFilter();
+            }
+        });
         
         
         
